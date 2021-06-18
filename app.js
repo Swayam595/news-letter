@@ -9,7 +9,7 @@ app.use(body_parser.urlencoded({extended : true}))
 app.use(express.static("static"))
 
 app.get('/', function(req, res) {
-  res.sendFile(`${__dirname}/signup.html`);
+  res.sendFile(`${__dirname}\\signup.html`);
 })
 
 app.post('/', function (req, res) {
@@ -39,9 +39,9 @@ app.post('/', function (req, res) {
 
   const request = https.request(url, options, function (response) {
     if (response.statusCode === 200) {
-      res.sendFile(`${__dirname}/success.html`);
+      res.sendFile(`${__dirname}\\success.html`);
     } else {
-      res.sendFile(`${__dirname}/failure.html`);
+      res.sendFile(`${__dirname}\\failure.html`);
     }
   })
   request.write(json_data)
